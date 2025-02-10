@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <id><![CDATA[[OCMOD] Custom Image Size For Facebook Catalog Feed]]></id>
+  <name><![CDATA[Custom Image Size For Facebook Catalog Feed]]></name>
+	<code>knns-custom-image-size-for-facebook-catalog-feed</code>
+	<version>0.1.0</version>
+	<author><![CDATA[<font color="#7F458C"><b>kanenas.net (aka Nikolas Branis)</b></font> - nbran@kanenas.net]]></author>
+	<link>https://kanenas.net/</link>
+	<file path="admin/controller/extension/feed/feed_manager.php" error="log">
+		<operation error="skip">
+			<search><![CDATA[$image_sizes = array('direct' => $this->language->get('text_direct_image'));]]></search>
+			<add position="replacew"><![CDATA[
+        $image_sizes = array(
+        										'direct' => $this->language->get('text_direct_image'),
+        										'CustomSize - 640x960' => '640x960'
+        										);
+			]]></add>
+		</operation>
+	</file>
+	<file path="catalog/controller/extension/feed/facebook_catalog.php" error="log">
+		<operation error="skip">
+			<search><![CDATA[$shipping="";]]></search>
+			<add position="before"><![CDATA[
+            $image_size = array(640,960);
+			]]></add>
+		</operation>
+	</file>
+</modification>
