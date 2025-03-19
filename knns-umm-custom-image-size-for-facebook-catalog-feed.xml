@@ -9,7 +9,7 @@
 	<file path="admin/controller/extension/feed/feed_manager.php" error="log">
 		<operation error="skip">
 			<search><![CDATA[$image_sizes = array('direct' => $this->language->get('text_direct_image'));]]></search>
-			<add position="replacew"><![CDATA[
+			<add position="replace"><![CDATA[
         $image_sizes = array(
         										'direct' => $this->language->get('text_direct_image'),
         										'CustomSize - 640x960' => '640x960'
